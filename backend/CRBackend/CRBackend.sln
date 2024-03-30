@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRModel", "CRModel\CRModel.csproj", "{D319AEC1-5680-4FDE-9BA7-6E88AA1DADCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudResume.FunctionApp", "CloudResume.FunctionApp\CloudResume.FunctionApp.csproj", "{FA5BE3F5-BDFD-4E52-A465-0D37210F32DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRRepository", "CRRepository\CRRepository.csproj", "{8C80050F-50A6-4DEE-8D62-20467F1C251E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{D319AEC1-5680-4FDE-9BA7-6E88AA1DADCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D319AEC1-5680-4FDE-9BA7-6E88AA1DADCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D319AEC1-5680-4FDE-9BA7-6E88AA1DADCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA5BE3F5-BDFD-4E52-A465-0D37210F32DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA5BE3F5-BDFD-4E52-A465-0D37210F32DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA5BE3F5-BDFD-4E52-A465-0D37210F32DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA5BE3F5-BDFD-4E52-A465-0D37210F32DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C80050F-50A6-4DEE-8D62-20467F1C251E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C80050F-50A6-4DEE-8D62-20467F1C251E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C80050F-50A6-4DEE-8D62-20467F1C251E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C80050F-50A6-4DEE-8D62-20467F1C251E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

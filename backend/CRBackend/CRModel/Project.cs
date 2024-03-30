@@ -9,9 +9,9 @@ public class Project
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
     public string? Status { get; set; }
-    public IList<string> TechStack { get; set; } = new List<string>();
-    public IList<string> Tools { get; set; } = new List<string>();
-    public IList<string> Framework { get; set; } = new List<string>();
+    public List<string> TechStacks { get; set; } = new();
+    public List<string> Tools { get; set; } = new();
+    public List<string> Frameworks { get; set; } = new();
     public string? GithubLink { get; set; } 
 }
 
