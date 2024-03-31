@@ -6,6 +6,7 @@ namespace CRRepository;
 public interface IProjectRepository
 {
     Task<List<ProjectEntity>> GetAllProjects();
+    Task<ProjectEntity> CreateProject(ProjectEntity projectEntity);
 }
 
 public class ProjectRepository : IProjectRepository
@@ -31,6 +32,14 @@ public class ProjectRepository : IProjectRepository
         }
 
         return projects;
+    }
+    
+    // create a new prject
+    public async Task<ProjectEntity> CreateProject(ProjectEntity projectEntity)
+    {
+        var client = await GetTableClient();
+        await client.AddEntityAsync(projectEntity);
+        return projectEntity;
     }
 
     private async Task<TableClient> GetTableClient()

@@ -1,5 +1,8 @@
 using System.Collections.Generic;
 using System.Net;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using CRModel;
 using CRRepository;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
@@ -25,12 +28,10 @@ public class ProjectController
         try
         {
             _logger.LogInformation("C# HTTP trigger to get All Projects processed a request.");
-        
             var projects = await _projectRepository.GetAllProjects();
 
             // return response
             var response = req.CreateResponse(HttpStatusCode.OK);
-            //response.Headers.Add("Content-Type", "application/json; charset=utf-8");
             await response.WriteAsJsonAsync(projects);
             return response;
         }
@@ -39,7 +40,47 @@ public class ProjectController
             Console.WriteLine(e);
             throw;
         }
-        
-        
+    }
+    
+    // add a function to create a new project
+    [Function("CreateProject")]
+    public async Task<HttpResponseData> CreateProject([HttpTrigger(AuthorizationLevel.Function, "post")] 
+        HttpRequestData req, [FromBody] Project project)
+    {
+        try
+        {
+            if(project== null)
+            {
+                return req.CreateResponse(HttpStatusCode.BadRequest);
+            }
+            _logger.LogInformation($"Creating new Project request for {JsonSerializer.Serialize(project)}");
+            var projectEntity = new ProjectEntity
+            {
+                PartitionKey = "Project",
+                RowKey = Guid.NewGuid().ToString(),
+                Id = Guid.NewGuid(),
+                Name = project.Name,
+                Description = project.Description,
+                StartDate =  DateTime.SpecifyKind(project.StartDate, DateTimeKind.Utc),
+                EndDate = DateTime.SpecifyKind(project.EndDate, DateTimeKind.Utc),
+                Status = project.Status,
+                TechStacks = JsonSerializer.Serialize(project.TechStacks),
+                Tools = JsonSerializer.Serialize(project.Tools),
+                Frameworks = JsonSerializer.Serialize(project.Frameworks),
+                GithubLink = project.GithubLink,
+                Type = (int)project.Type
+            };
+
+            
+            var createdProject = await _projectRepository.CreateProject(projectEntity);
+            var response = req.CreateResponse(HttpStatusCode.OK);
+            await response.WriteAsJsonAsync(createdProject);
+            return response;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 }
