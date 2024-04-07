@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using AutoMapper;
 using CRModel;
 using CRRepository;
 using Microsoft.Azure.Functions.Worker;
@@ -13,11 +14,13 @@ namespace CloudResume.FunctionApp;
 public class ProjectController
 {
     private readonly IProjectRepository _projectRepository;
+    private readonly IMapper _mapper;
     private readonly ILogger _logger;
 
-    public ProjectController(ILoggerFactory loggerFactory, IProjectRepository projectRepository)
+    public ProjectController(ILoggerFactory loggerFactory, IProjectRepository projectRepository, IMapper mapper)
     {
         _projectRepository = projectRepository;
+        _mapper = mapper;
         _logger = loggerFactory.CreateLogger<ProjectController>();
     }
 
@@ -29,10 +32,33 @@ public class ProjectController
         {
             _logger.LogInformation("C# HTTP trigger to get All Projects processed a request.");
             var projects = await _projectRepository.GetAllProjects();
+            
+            List<Project> projectModels = new List<Project>();
+            
+            // convert each project to Project model and deserialize the techstacks, tools and frameworks
+            foreach (var project in projects)
+            {
+                var entity = _mapper.Map<Project>(project);
+                projectModels.Add(entity);
+                // projectModels.Add(new Project
+                // {
+                //     Id = project.Id,
+                //     Name = project.Name,
+                //     Description = project.Description,
+                //     StartDate = project.StartDate,
+                //     EndDate = project.EndDate,
+                //     Status = project.Status,
+                //     TechStacks = JsonSerializer.Deserialize<List<string>>(project.TechStacks),
+                //     Tools = JsonSerializer.Deserialize<List<string>>(project.Tools),
+                //     Frameworks = JsonSerializer.Deserialize<List<string>>(project.Frameworks),
+                //     GithubLink = project.GithubLink,
+                //     Type = (ProjectType)project.Type
+                // });
+            }
 
             // return response
             var response = req.CreateResponse(HttpStatusCode.OK);
-            await response.WriteAsJsonAsync(projects);
+            await response.WriteAsJsonAsync(projectModels);
             return response;
         }
         catch (Exception e)
@@ -49,11 +75,9 @@ public class ProjectController
     {
         try
         {
-            if(project== null)
-            {
-                return req.CreateResponse(HttpStatusCode.BadRequest);
-            }
             _logger.LogInformation($"Creating new Project request for {JsonSerializer.Serialize(project)}");
+            // use Imapper conversion to convert Project to ProjectEntity
+            
             var projectEntity = new ProjectEntity
             {
                 PartitionKey = "Project",
@@ -80,7 +104,7 @@ public class ProjectController
         catch (Exception e)
         {
             Console.WriteLine(e);
-            throw;
+            return req.CreateResponse(HttpStatusCode.InternalServerError);
         }
     }
 }

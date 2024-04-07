@@ -9,7 +9,7 @@ public interface IProjectRepository
     Task<ProjectEntity> CreateProject(ProjectEntity projectEntity);
 }
 
-public class ProjectRepository : IProjectRepository
+public class ProjectRepository : RepositoryBase, IProjectRepository
 {
     private readonly string _connectionString;
 
@@ -17,13 +17,11 @@ public class ProjectRepository : IProjectRepository
     {
         _connectionString = configuration.GetConnectionString("TableStorageConnectionString");
     }
-    
-    
 
     // get all projects
     public async Task<List<ProjectEntity>> GetAllProjects()
     {
-        var client = await GetTableClient();
+        var client = await GetTableClient(_connectionString, "Projects");
         var projects = new List<ProjectEntity>();
         var query = client.QueryAsync<ProjectEntity>();
         await foreach (var project in query)
@@ -37,26 +35,10 @@ public class ProjectRepository : IProjectRepository
     // create a new prject
     public async Task<ProjectEntity> CreateProject(ProjectEntity projectEntity)
     {
-        var client = await GetTableClient();
+        var client = await GetTableClient(_connectionString, "Projects");
         await client.AddEntityAsync(projectEntity);
         return projectEntity;
     }
 
-    private async Task<TableClient> GetTableClient()
-    {
-        try
-        {
-            var tableServiceClient = new TableServiceClient(_connectionString);
-            var tableClient = tableServiceClient.GetTableClient("Projects");
-            await tableClient.CreateIfNotExistsAsync();
-
-            return tableClient;
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
-       
-    }
+    
 }
