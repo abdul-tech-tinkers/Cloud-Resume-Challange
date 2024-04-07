@@ -35,25 +35,11 @@ public class ProjectController
             
             List<Project> projectModels = new List<Project>();
             
-            // convert each project to Project model and deserialize the techstacks, tools and frameworks
+            // convert each project to Project model and deserialize the tech-stacks, tools and frameworks
             foreach (var project in projects)
             {
                 var entity = _mapper.Map<Project>(project);
                 projectModels.Add(entity);
-                // projectModels.Add(new Project
-                // {
-                //     Id = project.Id,
-                //     Name = project.Name,
-                //     Description = project.Description,
-                //     StartDate = project.StartDate,
-                //     EndDate = project.EndDate,
-                //     Status = project.Status,
-                //     TechStacks = JsonSerializer.Deserialize<List<string>>(project.TechStacks),
-                //     Tools = JsonSerializer.Deserialize<List<string>>(project.Tools),
-                //     Frameworks = JsonSerializer.Deserialize<List<string>>(project.Frameworks),
-                //     GithubLink = project.GithubLink,
-                //     Type = (ProjectType)project.Type
-                // });
             }
 
             // return response
@@ -76,26 +62,7 @@ public class ProjectController
         try
         {
             _logger.LogInformation($"Creating new Project request for {JsonSerializer.Serialize(project)}");
-            // use Imapper conversion to convert Project to ProjectEntity
-            
-            var projectEntity = new ProjectEntity
-            {
-                PartitionKey = "Project",
-                RowKey = Guid.NewGuid().ToString(),
-                Id = Guid.NewGuid(),
-                Name = project.Name,
-                Description = project.Description,
-                StartDate =  DateTime.SpecifyKind(project.StartDate, DateTimeKind.Utc),
-                EndDate = DateTime.SpecifyKind(project.EndDate, DateTimeKind.Utc),
-                Status = project.Status,
-                TechStacks = JsonSerializer.Serialize(project.TechStacks),
-                Tools = JsonSerializer.Serialize(project.Tools),
-                Frameworks = JsonSerializer.Serialize(project.Frameworks),
-                GithubLink = project.GithubLink,
-                Type = (int)project.Type
-            };
-
-            
+            var projectEntity = _mapper.Map<ProjectEntity>(project);
             var createdProject = await _projectRepository.CreateProject(projectEntity);
             var response = req.CreateResponse(HttpStatusCode.OK);
             await response.WriteAsJsonAsync(createdProject);
