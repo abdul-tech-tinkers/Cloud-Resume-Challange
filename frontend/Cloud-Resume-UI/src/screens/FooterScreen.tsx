@@ -11,7 +11,7 @@ function FooterScreen() {
         </Heading>
       </Flex>
 
-      <Flex direction="row" gap="2" justify="center" p={5}>
+      <Flex direction="row" gap="2" justify="center">
         <AppIconButton>
           <FaLinkedin />
         </AppIconButton>
