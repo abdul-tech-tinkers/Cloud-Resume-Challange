@@ -1,5 +1,4 @@
 import axiosInstance from "./AxoisInstance";
-import AuthStorage from "./auth/AuthStorage";
 
 class ApiClient<T> {
   endpoint: string;
@@ -15,11 +14,11 @@ class ApiClient<T> {
   };
 
   getAll = async () => {
-    const authToken = AuthStorage.getToken();
+    //onst authToken = AuthStorage.getToken();
     console.log(`get all from ApiClientClass ${this.endpoint}`);
     const res = await axiosInstance.get<T[]>(this.endpoint, {
       headers: {
-        Authorization: authToken ? `Bearer ${authToken}` : "",
+        //Authorization: authToken ? `Bearer ${authToken}` : "",
       },
     });
     return res.data;
@@ -27,10 +26,10 @@ class ApiClient<T> {
 
   post = async (data: T) => {
     console.log(`posting data ${this.endpoint}`);
-    const authToken = AuthStorage.getToken();
+    //const authToken = AuthStorage.getToken();
     const res = await axiosInstance.post<T>(this.endpoint, data, {
       headers: {
-        Authorization: authToken ? `Bearer ${authToken}` : "",
+        //Authorization: authToken ? `Bearer ${authToken}` : "",
       },
     });
     return res.data;
@@ -38,10 +37,10 @@ class ApiClient<T> {
 
   put = async (data: T) => {
     console.log(`put data ${this.endpoint}`);
-    const authToken = AuthStorage.getToken();
+    //const authToken = AuthStorage.getToken();
     const res = await axiosInstance.put<T>(this.endpoint, data, {
       headers: {
-        Authorization: authToken ? `Bearer ${authToken}` : "",
+        //Authorization: authToken ? `Bearer ${authToken}` : "",
       },
     });
     return res.data;
@@ -49,22 +48,22 @@ class ApiClient<T> {
 
   delete = async (id: string) => {
     const url = this.endpoint + `/${id}`;
-    const authToken = AuthStorage.getToken();
+    //const authToken = AuthStorage.getToken();
     console.log(`delete by id id from ApiClientClass ${url}`);
     const res = await axiosInstance.delete<T>(url, {
       headers: {
-        Authorization: authToken ? `Bearer ${authToken}` : "",
+       // Authorization: authToken ? `Bearer ${authToken}` : "",
       },
     });
     return res.data;
   };
 
   deleteAll = async () => {
-    const authToken = AuthStorage.getToken();
+    //const authToken = AuthStorage.getToken();
     console.log(`delete by id id from ApiClientClass ${this.endpoint}`);
     const res = await axiosInstance.delete<T>(this.endpoint, {
       headers: {
-        Authorization: authToken ? `Bearer ${authToken}` : "",
+        //Authorization: authToken ? `Bearer ${authToken}` : "",
       },
     });
     return res.data;
