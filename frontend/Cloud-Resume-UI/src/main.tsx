@@ -10,9 +10,9 @@ var queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <Theme appearance="light" accentColor="iris">
+      <Theme appearance="dark" accentColor="ruby">
         <App />
-        {/* <ThemePanel /> */}
+        <ThemePanel />
       </Theme>
     </QueryClientProvider>
   </React.StrictMode>

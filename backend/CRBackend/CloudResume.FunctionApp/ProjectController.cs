@@ -25,7 +25,7 @@ public class ProjectController
     }
 
     [Function("GetProjects")]
-    public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req,
+    public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "Projects/GetProjects")] HttpRequestData req,
         FunctionContext executionContext)
     {
         try
@@ -56,7 +56,7 @@ public class ProjectController
     
     // add a function to create a new project
     [Function("CreateProject")]
-    public async Task<HttpResponseData> CreateProject([HttpTrigger(AuthorizationLevel.Function, "post")] 
+    public async Task<HttpResponseData> CreateProject([HttpTrigger(AuthorizationLevel.Function, "post", Route = "Projects/CreateProject")] 
         HttpRequestData req, [FromBody] Project project)
     {
         try

@@ -19,7 +19,7 @@ public class VisitorController
     }
 
     [Function("GetCounter")]
-    public async Task<HttpResponseData> GetCounter([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req,
+    public async Task<HttpResponseData> GetCounter([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "Visitor/GetCounter")] HttpRequestData req,
         FunctionContext executionContext)
     {
         try
@@ -39,7 +39,7 @@ public class VisitorController
     }
     
     [Function("IncrementCounter")]
-    public async Task<HttpResponseData> IncrementCounter([HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequestData req,
+    public async Task<HttpResponseData> IncrementCounter([HttpTrigger(AuthorizationLevel.Function, "post", Route = "Visitor/IncrementCounter")] HttpRequestData req,
         FunctionContext executionContext)
     {
         try
