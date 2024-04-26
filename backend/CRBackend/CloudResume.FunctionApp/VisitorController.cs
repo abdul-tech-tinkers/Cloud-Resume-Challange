@@ -28,7 +28,7 @@ public class VisitorController
 
             var visitor = await _visitorRepository.GetCounterEntity();
             var response = req.CreateResponse(HttpStatusCode.OK);
-            await response.WriteStringAsync(visitor.Visits.ToString());
+            await response.WriteAsJsonAsync(visitor);
             return response;
         }
         catch (Exception e)
@@ -48,7 +48,7 @@ public class VisitorController
 
             var updatedCounterEntity = await _visitorRepository.IncrementCounter();
             var response = req.CreateResponse(HttpStatusCode.OK);
-            await response.WriteStringAsync(updatedCounterEntity.Visits.ToString());
+            await response.WriteAsJsonAsync(updatedCounterEntity);
             return response;
         }
         catch (Exception e)

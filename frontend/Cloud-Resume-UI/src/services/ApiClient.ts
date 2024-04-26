@@ -13,6 +13,13 @@ class ApiClient<T> {
     return res;
   };
 
+  get = async () => {
+    const url = this.endpoint;
+    console.log(url);
+    const res = await axiosInstance.get<T>(url);
+    return res.data;
+  };
+
   getAll = async () => {
     //onst authToken = AuthStorage.getToken();
     console.log(`get all from ApiClientClass ${this.endpoint}`);
@@ -52,7 +59,7 @@ class ApiClient<T> {
     console.log(`delete by id id from ApiClientClass ${url}`);
     const res = await axiosInstance.delete<T>(url, {
       headers: {
-       // Authorization: authToken ? `Bearer ${authToken}` : "",
+        // Authorization: authToken ? `Bearer ${authToken}` : "",
       },
     });
     return res.data;

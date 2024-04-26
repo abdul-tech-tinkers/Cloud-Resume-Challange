@@ -1,3 +1,5 @@
 export interface Visitor {
-  visits: number;
+  partitionKey: string;
+  rowKey: string;
+  Visits: number;
 }
