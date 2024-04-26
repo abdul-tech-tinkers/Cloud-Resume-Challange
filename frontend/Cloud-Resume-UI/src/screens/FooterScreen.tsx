@@ -13,6 +13,7 @@ function FooterScreen() {
 
       <Flex direction="row" gap="2" justify="center" align="center">
         <AppIconButton
+          color="gray"
           onClick={() => {
             console.log("linkedin");
           }}
@@ -20,6 +21,7 @@ function FooterScreen() {
           <FaLinkedin />
         </AppIconButton>
         <AppIconButton
+          color="gray"
           onClick={() => {
             console.log("twitter");
           }}

@@ -7,7 +7,7 @@ import HomePageProjects from "./screens/HomePageProjects.tsx";
 
 function App() {
   return (
-    <Container size="4" align="center">
+    <Container size="3" align="center">
       <HeaderScreen />
       <ShortIntro />
       <HomePageProjects />

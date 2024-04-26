@@ -1,15 +1,22 @@
 import useGetVisitorCount from "../hooks/useGetVisitorCount";
-import { Badge, Text } from "@radix-ui/themes";
+import { Badge, Flex, Text } from "@radix-ui/themes";
+import useUpdateVisitorCount from "../hooks/useUpdateVisitorCount";
+import { useEffect } from "react";
 
 const AppVisitCounter = () => {
   const { data, isLoading, error } = useGetVisitorCount();
+  const { mutate } = useUpdateVisitorCount();
+  useEffect(() => {
+    mutate();
+  }, [mutate]); // This ensures mutate is only called once after the first render
 
   if (isLoading) <Text>Loading...</Text>;
   if (error) <Text>Error</Text>;
   return (
-    <Text>
-      Visits <Badge>{data?.Visits ?? "No visits yet"}</Badge>
-    </Text>
+    <Flex gap="2" direction="row" align="center">
+      <Text color="gray">visits</Text>
+      <Badge>{data?.Visits}</Badge>
+    </Flex>
   );
 };
 
