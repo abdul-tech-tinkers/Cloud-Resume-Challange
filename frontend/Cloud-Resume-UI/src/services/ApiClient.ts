@@ -13,13 +13,6 @@ class ApiClient<T> {
     return res;
   };
 
-  get = async () => {
-    const url = this.endpoint;
-    console.log(url);
-    const res = await axiosInstance.get<T>(url);
-    return res.data;
-  };
-
   getAll = async () => {
     //onst authToken = AuthStorage.getToken();
     console.log(`get all from ApiClientClass ${this.endpoint}`);

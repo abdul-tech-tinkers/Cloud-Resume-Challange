@@ -1,13 +1,13 @@
 export interface Project {
-  id: string;
-  name: string;
-  description: string;
-  type: number;
-  startDate: Date;
-  endDate: Date;
-  status: string;
-  techStacks: string[];
-  tools: string[];
-  frameworks: string[];
-  githubLink: string;
+  Id: string;
+  Name: string;
+  Description: string;
+  Type: number;
+  StartDate: Date;
+  EndDate: Date;
+  Status: string;
+  TechStacks: string[];
+  Tools: string[];
+  Frameworks: string[];
+  GithubLink: string;
 }

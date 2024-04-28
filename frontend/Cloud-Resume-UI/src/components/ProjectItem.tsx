@@ -6,38 +6,43 @@ import { RiTimeLine } from "react-icons/ri";
 import { FaTools } from "react-icons/fa";
 import { CiSettings } from "react-icons/ci";
 
-function ProjectItem(project: Project) {
+interface props {
+  project: Project;
+}
+
+const ProjectItem = ({ project }: props) => {
+  console.log(project);
   return (
     <Card my="5">
       <Flex direction="column" gap="2">
         <Flex direction="row" align="center" justify="between">
-          <Heading>{project.name}</Heading>
-          {project.githubLink && (
-            <AppIconButton onClick={() => console.log(project.id)}>
+          <Heading>{project.Name}</Heading>
+          {project.GithubLink && (
+            <AppIconButton onClick={() => console.log(project.Id)}>
               <FaGithub />
             </AppIconButton>
           )}
         </Flex>
         <Flex direction="row" gap="1">
-          {project.techStacks.map((techStack) => (
-            <Badge>{techStack}</Badge>
+          {project?.TechStacks?.map((techStack) => (
+            <Badge key={techStack}>{techStack}</Badge>
           ))}
         </Flex>
-        <Text wrap="wrap">{project.description}</Text>
-        <Flex direction="row" align="center" gap="1">
+        <Text wrap="wrap">{project.Description}</Text>
+        {/* <Flex direction="row" align="center" gap="1">
           <RiTimeLine color="gray" />
           <Text size="1" color="gray">
-            {project.startDate.getMonth()}/{project.startDate.getFullYear()}-{" "}
-            {project.endDate.getMonth()}/{project.endDate.getFullYear()}
+            {project.StartDate.getMonth()}/{project?.StartDate?.getFullYear()}
+            - {project.EndDate.getMonth()}/{project?.EndDate?.getFullYear()}
           </Text>
-        </Flex>
+        </Flex> */}
 
         <Flex direction="row" align="center" gap="1">
           <CiSettings color="gray" />
-          {project.frameworks && (
+          {project.Frameworks && (
             <Flex direction="row" gap="1">
-              {project.frameworks.map((framework) => (
-                <Text color="gray" size="1">
+              {project?.Frameworks?.map((framework) => (
+                <Text key={framework} color="gray" size="1">
                   {framework}
                 </Text>
               ))}
@@ -47,10 +52,10 @@ function ProjectItem(project: Project) {
 
         <Flex direction="row" align="center" gap="1">
           <FaTools color="gray" />
-          {project.tools && (
+          {project.Tools && (
             <Flex direction="row" gap="1">
-              {project.tools.map((tool) => (
-                <Text color="gray" size="1">
+              {project?.Tools?.map((tool) => (
+                <Text key={tool} color="gray" size="1">
                   {tool}
                 </Text>
               ))}
@@ -60,6 +65,6 @@ function ProjectItem(project: Project) {
       </Flex>
     </Card>
   );
-}
+};
 
 export default ProjectItem;

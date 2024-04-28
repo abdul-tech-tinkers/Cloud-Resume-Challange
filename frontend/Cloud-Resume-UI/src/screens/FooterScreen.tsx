@@ -3,7 +3,7 @@ import { FaTwitter, FaLinkedin } from "react-icons/fa6";
 import AppIconButton from "../components/AppIconButton";
 import AppVisitCounter from "../components/AppVisitCounter";
 
-function FooterScreen() {
+const FooterScreen = () => {
   return (
     <Flex direction="row" justify="between">
       <Flex direction="row" align="center" gap="2">
@@ -31,6 +31,6 @@ function FooterScreen() {
       </Flex>
     </Flex>
   );
-}
+};
 
 export default FooterScreen;

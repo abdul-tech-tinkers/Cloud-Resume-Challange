@@ -6,12 +6,12 @@ interface props extends ComponentProps<"Link"> {
   href: string;
 }
 
-function AppLink({ children, href, ...rest }: props) {
+const AppLink = ({ children, href, ...rest }: props) => {
   return (
     <Link underline="none" href={href} {...rest}>
       {children}
     </Link>
   );
-}
+};
 
 export default AppLink;

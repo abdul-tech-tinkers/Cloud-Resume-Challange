@@ -6,7 +6,7 @@ import VisitorService from "../services/VisitorService";
 const useGetVisitorCount = () => {
   return useQuery<Visitor, AxiosError, Visitor>({
     queryKey: ["GetVisitorCount"],
-    queryFn: VisitorService("GetCounter").get,
+    queryFn: VisitorService("GetCounter").getAll,
   });
 };
 export default useGetVisitorCount;
