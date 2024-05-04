@@ -29,13 +29,15 @@ const ProjectItem = ({ project }: props) => {
           ))}
         </Flex>
         <Text wrap="wrap">{project.Description}</Text>
-        {/* <Flex direction="row" align="center" gap="1">
+        <Flex direction="row" align="center" gap="1">
           <RiTimeLine color="gray" />
           <Text size="1" color="gray">
-            {project.StartDate.getMonth()}/{project?.StartDate?.getFullYear()}
-            - {project.EndDate.getMonth()}/{project?.EndDate?.getFullYear()}
+            {new Date(project.StartDate).getMonth() + 1}/
+            {new Date(project?.StartDate).getFullYear()}-{" "}
+            {new Date(project.EndDate).getMonth()+1}/
+            {new Date(project.EndDate).getFullYear()}
           </Text>
-        </Flex> */}
+        </Flex>
 
         <Flex direction="row" align="center" gap="1">
           <CiSettings color="gray" />

@@ -1,7 +1,8 @@
-import { Flex, Heading } from "@radix-ui/themes";
+import { Flex, Heading, Text } from "@radix-ui/themes";
 import ProjectItem from "../components/ProjectItem.tsx";
 import { Project } from "../models/Project.tsx";
-import AppProjectItem from "../components/AppProjectItem.tsx";
+import AppIconButton from "../components/AppIconButton.tsx";
+import { FaArrowRight } from "react-icons/fa6";
 
 interface props {
   title: string;
@@ -10,7 +11,15 @@ interface props {
 const HomePageProjects = ({ title, projects }: props) => {
   return (
     <Flex py="5" direction="column">
-      <Heading>{title}</Heading>
+      <Flex direction="row" justify="between" align="center">
+        <Heading>{title}</Heading>
+        <Flex direction="row" justify="between" gap="1" align="center">
+          <Text size="1">All {title}</Text>
+          <AppIconButton color="gray" onClick={() => console.log("arrow")}>
+            <FaArrowRight size={10} />
+          </AppIconButton>
+        </Flex>
+      </Flex>
       <Flex gap="5" key={1234}>
         {projects?.map((project) => (
           <ProjectItem key={project?.id} project={project} />

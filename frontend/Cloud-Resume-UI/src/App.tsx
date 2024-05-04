@@ -14,17 +14,8 @@ function App() {
   return (
     <Container size="3" align="center">
       <HeaderScreen />
-      <ShortIntro />
-      <HomePageProjects
-        title="Recent Project"
-        projects={data?.filter((p) => p.Type == 1).slice(0, 3)}
-      />
-
-      <HomePageProjects
-        title="Cloud Project"
-        projects={data?.filter((p) => p.Type == 0).slice(0, 3)}
-      />
-      <Separator orientation="horizontal" size="4" my="5" />
+      
+      <Separator orientation="horizontal" size="4" my="4" />
       <FooterScreen />
     </Container>
   );
