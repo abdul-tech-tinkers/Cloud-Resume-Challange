@@ -5,6 +5,7 @@ import AppIconButton from "./AppIconButton";
 import { RiTimeLine } from "react-icons/ri";
 import { FaTools } from "react-icons/fa";
 import { CiSettings } from "react-icons/ci";
+import AppProjectDate from "./AppProjectDate";
 
 interface props {
   project: Project;
@@ -29,15 +30,7 @@ const ProjectCardItem = ({ project }: props) => {
           ))}
         </Flex>
         <Text wrap="wrap">{project.Description}</Text>
-        <Flex direction="row" align="center" gap="1">
-          <RiTimeLine color="gray" />
-          <Text size="1" color="gray">
-            {new Date(project.StartDate).getMonth() + 1}/
-            {new Date(project?.StartDate).getFullYear()}-{" "}
-            {new Date(project.EndDate).getMonth() + 1}/
-            {new Date(project.EndDate).getFullYear()}
-          </Text>
-        </Flex>
+        <AppProjectDate startDate={project.StartDate} endDate={project.EndDate}/>
 
         <Flex direction="row" align="center" gap="1">
           <CiSettings color="gray" />

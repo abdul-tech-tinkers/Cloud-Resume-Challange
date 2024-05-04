@@ -1,5 +1,4 @@
 import { Flex, Heading, Strong } from "@radix-ui/themes";
-import AppLink from "../components/AppLink";
 import { FaSun } from "react-icons/fa6";
 import logo from "../assets/AJ.png";
 import { Link } from "react-router-dom";
