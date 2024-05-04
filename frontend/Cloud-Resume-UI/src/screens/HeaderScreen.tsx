@@ -14,10 +14,18 @@ const HeaderScreen = () => {
       </Flex>
 
       <Flex direction="row" gap="5" justify="center" align="center" p={5}>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/projects">Projects</Link>
-        <Link to="/contact">Contact</Link>
+        <Link style={{ textDecoration: "none" }} to="/">
+          Home
+        </Link>
+        <Link style={{ textDecoration: "none" }} to="/about">
+          About
+        </Link>
+        <Link style={{ textDecoration: "none" }} to="/projects">
+          Projects
+        </Link>
+        <Link style={{ textDecoration: "none" }} to="/contact">
+          Contact
+        </Link>
         <FaSun height="25" />
       </Flex>
     </Flex>
