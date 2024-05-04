@@ -1,5 +1,5 @@
 import { Flex, Heading, Text } from "@radix-ui/themes";
-import ProjectItem from "../components/ProjectItem.tsx";
+import ProjectCardItem from "../components/ProjectCardItem.tsx";
 import { Project } from "../models/Project.tsx";
 import AppIconButton from "../components/AppIconButton.tsx";
 import { FaArrowRight } from "react-icons/fa6";
@@ -22,7 +22,7 @@ const HomePageProjects = ({ title, projects }: props) => {
       </Flex>
       <Flex gap="5" key={1234}>
         {projects?.map((project) => (
-          <ProjectItem key={project?.id} project={project} />
+          <ProjectCardItem key={project?.id} project={project} />
         ))}
       </Flex>
     </Flex>

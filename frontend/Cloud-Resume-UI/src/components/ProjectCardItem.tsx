@@ -10,7 +10,7 @@ interface props {
   project: Project;
 }
 
-const ProjectItem = ({ project }: props) => {
+const ProjectCardItem = ({ project }: props) => {
   console.log(project);
   return (
     <Card my="5">
@@ -34,7 +34,7 @@ const ProjectItem = ({ project }: props) => {
           <Text size="1" color="gray">
             {new Date(project.StartDate).getMonth() + 1}/
             {new Date(project?.StartDate).getFullYear()}-{" "}
-            {new Date(project.EndDate).getMonth()+1}/
+            {new Date(project.EndDate).getMonth() + 1}/
             {new Date(project.EndDate).getFullYear()}
           </Text>
         </Flex>
@@ -69,4 +69,4 @@ const ProjectItem = ({ project }: props) => {
   );
 };
 
-export default ProjectItem;
+export default ProjectCardItem;
