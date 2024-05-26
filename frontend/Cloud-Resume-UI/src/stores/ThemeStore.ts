@@ -1,5 +1,3 @@
-// create a zustand store to manage the theme for redix ui and toggle the theme
-
 import { create } from "zustand";
 
 type Theme = "light" | "dark";
@@ -9,10 +7,20 @@ interface ThemeStore {
   toggleTheme: () => void;
 }
 
-const useThemeStore = create<ThemeStore>((set) => ({
-  theme: "light",
-  toggleTheme: () =>
-    set((state) => ({ theme: state.theme === "light" ? "dark" : "light" })),
-}));
+const useThemeStore = create<ThemeStore>((set) => {
+  // Check if theme is stored in localStorage, otherwise default to "light"
+  const initialTheme = localStorage.getItem("theme") as Theme || "light";
+
+  return {
+    theme: initialTheme,
+    toggleTheme: () => {
+      set((state) => {
+        const newTheme = state.theme === "light" ? "dark" : "light";
+        localStorage.setItem("theme", newTheme); // Save theme to localStorage
+        return { theme: newTheme };
+      });
+    },
+  };
+});
 
 export default useThemeStore;
