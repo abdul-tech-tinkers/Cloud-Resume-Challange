@@ -5,10 +5,7 @@ import { useEffect } from "react";
 
 const AppVisitCounter = () => {
   const { data, isLoading, error } = useGetVisitorCount();
-  const { mutate } = useUpdateVisitorCount();
-  useEffect(() => {
-    mutate();
-  }, [mutate]); // This ensures mutate is only called once after the first render
+  // This ensures mutate is only called once after the first render
 
   if (isLoading) <Text>Loading...</Text>;
   if (error) <Text>Error</Text>;
