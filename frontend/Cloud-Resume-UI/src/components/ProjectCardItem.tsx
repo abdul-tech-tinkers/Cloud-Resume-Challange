@@ -6,6 +6,7 @@ import { FaTools } from "react-icons/fa";
 import { CiSettings } from "react-icons/ci";
 import AppProjectDate from "./AppProjectDate";
 import AppProjectLinkItem from "./AppProjectLinkItem";
+import AppLink from "./AppLink";
 
 interface props {
   project: Project;
@@ -19,9 +20,11 @@ const ProjectCardItem = ({ project }: props) => {
         <Flex direction="row" align="center" justify="between">
           <AppProjectLinkItem project={project} />
           {project.GithubLink && (
-            <AppIconButton onClick={() => console.log(project.Id)}>
-              <FaGithub />
-            </AppIconButton>
+            <AppLink href={project.GithubLink}>
+              <AppIconButton onClick={() => console.log(project.Id)}>
+                <FaGithub />
+              </AppIconButton>
+            </AppLink>
           )}
         </Flex>
         <Flex direction="row" gap="1">

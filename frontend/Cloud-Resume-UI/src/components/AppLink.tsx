@@ -8,7 +8,7 @@ interface props extends ComponentProps<"Link"> {
 
 const AppLink = ({ children, href, ...rest }: props) => {
   return (
-    <Link underline="none" href={href} {...rest}>
+    <Link target="_blank" underline="none" href={href} {...rest}>
       {children}
     </Link>
   );
