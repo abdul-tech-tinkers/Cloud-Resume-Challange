@@ -2,7 +2,6 @@ import { FaGithub } from "react-icons/fa6";
 import { Project } from "../models/Project";
 import { Badge, Card, Flex, Heading, Text } from "@radix-ui/themes";
 import AppIconButton from "./AppIconButton";
-import { RiTimeLine } from "react-icons/ri";
 import { FaTools } from "react-icons/fa";
 import { CiSettings } from "react-icons/ci";
 import AppProjectDate from "./AppProjectDate";
@@ -30,7 +29,10 @@ const ProjectCardItem = ({ project }: props) => {
           ))}
         </Flex>
         <Text wrap="wrap">{project.Description}</Text>
-        <AppProjectDate startDate={project.StartDate} endDate={project.EndDate}/>
+        <AppProjectDate
+          startDate={project.StartDate}
+          endDate={project.EndDate}
+        />
 
         <Flex direction="row" align="center" gap="1">
           <CiSettings color="gray" />

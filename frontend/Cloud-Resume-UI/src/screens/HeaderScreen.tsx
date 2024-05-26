@@ -7,9 +7,9 @@ const HeaderScreen = () => {
     <Flex direction="row" my="5" justify="between">
       <Flex direction="row" align="center" gap="2">
         <img src={logo} height={50} width={50} />
-        {/* <Heading>
+        <Heading>
           <Strong>Abdul Jameel</Strong>
-        </Heading> */}
+        </Heading>
       </Flex>
 
       <Flex direction="row" gap="5" justify="center" align="center" p={5}>

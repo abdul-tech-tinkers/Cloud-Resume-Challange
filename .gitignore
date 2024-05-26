@@ -398,3 +398,4 @@ FodyWeavers.xsd
 *.sln.iml
 
 *.__azurite/
+frontend/Cloud-Resume-UI/__azurite_*.json

@@ -54,6 +54,31 @@ public class ProjectController
         }
     }
     
+    // write a function to get a project by id
+    [Function("GetProjectById")]
+    public async Task<HttpResponseData> GetProjectById([HttpTrigger(AuthorizationLevel.Function, "get", Route = "Projects/GetProjectById/{id}")] HttpRequestData req,
+        string id)
+    {
+        try
+        {
+            _logger.LogInformation($"C# HTTP trigger function processed a request to get project by id: {id}");
+            var project = await _projectRepository.GetProjectById(id);
+            if (project == null)
+            {
+                return req.CreateResponse(HttpStatusCode.NotFound);
+            }
+            var projectModel = _mapper.Map<Project>(project);
+            var response = req.CreateResponse(HttpStatusCode.OK);
+            await response.WriteAsJsonAsync(projectModel);
+            return response;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return req.CreateResponse(HttpStatusCode.InternalServerError);
+        }
+    }
+    
     // add a function to create a new project
     [Function("CreateProject")]
     public async Task<HttpResponseData> CreateProject([HttpTrigger(AuthorizationLevel.Function, "post", Route = "Projects/CreateProject")] 
