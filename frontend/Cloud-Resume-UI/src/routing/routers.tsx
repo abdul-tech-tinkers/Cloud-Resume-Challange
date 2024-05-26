@@ -4,6 +4,7 @@ import ProjectsScreen from "../screens/ProjectsScreen";
 import DashboardScreen from "../screens/DashboardScreen";
 import AboutScreen from "../screens/AboutScreen";
 import ContactScreen from "../screens/ContactScreeen";
+import AppProjectDetails from "../components/AppProjectDetails";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,13 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <DashboardScreen /> },
       { path: "about", element: <AboutScreen /> },
-      { path: "projects", element: <ProjectsScreen /> },
+      {
+        path: "projects",
+        children: [
+          { index: true, element: <ProjectsScreen /> },
+          { path: ":projectId", element: <AppProjectDetails /> },
+        ],
+      },
       { path: "contact", element: <ContactScreen /> },
     ],
   },

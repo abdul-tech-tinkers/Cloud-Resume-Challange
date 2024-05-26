@@ -3,7 +3,6 @@ import { Container, Heading, Progress, Separator } from "@radix-ui/themes";
 import HeaderScreen from "./screens/HeaderScreen";
 import ShortIntro from "./screens/ShortIntro";
 import FooterScreen from "./screens/FooterScreen";
-import HomePageProjects from "./screens/HomePageProjects.tsx";
 import useGetProjects from "./hooks/useGetProjects.ts";
 
 function App() {

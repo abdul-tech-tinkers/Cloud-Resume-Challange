@@ -6,7 +6,7 @@ const ProjectsScreen = () => {
   const { data } = useGetProjects();
 
   return (
-    <Flex mt="9" direction="column">
+    <Flex mt="5" direction="column">
       <Heading mb="5" size="8">
         My Projects
       </Heading>

@@ -10,7 +10,8 @@ class ApiClient<T> {
     const url = this.endpoint + `/${id}`;
     console.log(url);
     const res = await axiosInstance.get<T>(url);
-    return res;
+    console.log(res.data);
+    return res.data;
   };
 
   getAll = async () => {

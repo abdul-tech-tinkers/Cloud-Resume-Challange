@@ -6,7 +6,7 @@ import ShortIntro from "./ShortIntro";
 const DashboardScreen = () => {
   var { data, isLoading, error } = useGetProjects();
   return (
-    <Flex mt="9" direction="column">
+    <Flex mt="5" direction="column">
       <ShortIntro />
       <HomePageProjects
         title="Recent Project"
