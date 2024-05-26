@@ -1,5 +1,5 @@
 resource "azurerm_storage_account" "cloudresumechallenge_storageaccount" {
-  name                     = "${var.appname}_${var.env}storage"
+  name                     = "crcbaj${var.env}storage"
   resource_group_name      = azurerm_resource_group.cloudresumechallenge_resourcegroup.name
   location                 = azurerm_resource_group.cloudresumechallenge_resourcegroup.location
   account_tier             = "Standard"
@@ -24,6 +24,6 @@ resource "azurerm_storage_table_entity" "cloudresumechallenge_counter_table_enti
   partition_key    = "counter"
   row_key          = "counter"
   entity = {
-    visits = 0
+    Visits = 0
   }
 }

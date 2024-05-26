@@ -1,5 +1,5 @@
 resource "azurerm_service_plan" "cloudresumechallenge_appserviceplan" {
-  name                = "${var.appname}_${var.env}appserviceplan"
+  name                = "${var.appname}${var.env}appserviceplan"
   location            = azurerm_resource_group.cloudresumechallenge_resourcegroup.location
   resource_group_name = azurerm_resource_group.cloudresumechallenge_resourcegroup.name
   os_type             = "Linux"
@@ -8,7 +8,7 @@ resource "azurerm_service_plan" "cloudresumechallenge_appserviceplan" {
 }
 
 resource "azurerm_linux_function_app" "cloudresumechallenge_functionapp" {
-  name                = "${var.appname}_${var.env}functionapp"
+  name                = "${var.appname}${var.env}functionapp"
   location            = azurerm_resource_group.cloudresumechallenge_resourcegroup.location
   resource_group_name = azurerm_resource_group.cloudresumechallenge_resourcegroup.name
 
@@ -18,7 +18,8 @@ resource "azurerm_linux_function_app" "cloudresumechallenge_functionapp" {
 
   site_config {
     application_stack {
-      dotnet_version = local.dotnetversion
+      dotnet_version              = local.dotnetversion
+      use_dotnet_isolated_runtime = true
     }
   }
 

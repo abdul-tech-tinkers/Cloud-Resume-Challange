@@ -1,0 +1,61 @@
+terraform fmt
+terraform validate
+
+-- local
+terraform workspace select default
+
+
+ terraform workspace show
+ terraform workspace list
+
+terraform workspace new dev
+terraform workspace new uat
+terraform workspace new prod
+
+dev/local
+terraform plan -var-file="dev.environment.tfvars"
+terraform apply -var-file="dev.environment.tfvars" --auto-approve
+terraform destroy -var-file="dev.environment.tfvars" --auto-approve
+
+
+qa
+
+terraform init
+terraform plan -var-file="qa.environement.tfvars"
+terraform apply -var-file="qa.environement.tfvars" --auto-approve
+terraform destroy -var-file="qa.environement.tfvars" --auto-approve
+
+- import api's in api management - not possible as of now use deployment 
+
+- define backend and workspaces for tdd, uat and production
+
+
+TDD workflow
+1) create a CD pipeline
+ - deploy terraform tdd resources
+2) deploy all azure functions
+  - read the funciton app names from terraform file into variable
+  - deploy each function app 
+3) import azure functions in api management
+4) run acceptancechecks tests.
+5) destroy all the resources
+
+Query key for search = @Microsoft.KeyVault(https://duroosappqakeyvault.vault.azure.net/secrets/SearchServiceQueryApiKey/7a073f6fb9aa48ca80c55090be6e695d)
+
+read auth details from keyvault and keep them as variables
+deploy terraform
+deploy azure functions to function apps
+update apim to recreate api and map them to azure function
+run sanity check and acceptance checks
+
+
+References
+
+https://royarin.blogspot.com/2021/01/import-functionswebapi-in-azure-api.html
+
+
+
+
+
+
+
