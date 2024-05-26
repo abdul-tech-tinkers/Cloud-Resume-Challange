@@ -3,4 +3,5 @@
 resource "azurerm_resource_group" "cloudresumechallenge_resourcegroup" {
   name     = "${var.appname}_${var.env}"
   location = var.location
+  tags     = local.tags
 }

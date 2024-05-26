@@ -5,6 +5,7 @@ resource "azurerm_storage_account" "cloudresumechallenge_storageaccount" {
   account_tier             = "Standard"
   account_kind             = "StorageV2"
   account_replication_type = "LRS"
+  tags                     = local.tags
 }
 
 
