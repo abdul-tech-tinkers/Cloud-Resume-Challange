@@ -21,8 +21,8 @@ resource "azurerm_storage_table" "cloudresumechallenge_project_table" {
 
 resource "azurerm_storage_table_entity" "cloudresumechallenge_counter_table_entity" {
   storage_table_id = azurerm_storage_table.cloudresumechallenge_counter_table.id
-  partition_key    = "counter"
-  row_key          = "counter"
+  partition_key    = "Counter"
+  row_key          = "Counter"
   entity = {
     Visits = 0
   }
