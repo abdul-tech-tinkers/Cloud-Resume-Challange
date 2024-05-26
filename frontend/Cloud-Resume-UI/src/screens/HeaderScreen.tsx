@@ -1,8 +1,10 @@
 import { Flex, Heading, Strong } from "@radix-ui/themes";
-import { FaSun } from "react-icons/fa6";
+import { FaMoon, FaSun } from "react-icons/fa6";
 import logo from "../assets/AJ.png";
 import { Link } from "react-router-dom";
+import useThemeStore from "../stores/ThemeStore";
 const HeaderScreen = () => {
+  const { theme, toggleTheme } = useThemeStore();
   return (
     <Flex direction="row" my="5" justify="between">
       <Flex direction="row" align="center" gap="2">
@@ -25,7 +27,8 @@ const HeaderScreen = () => {
         <Link style={{ textDecoration: "none" }} to="/contact">
           Contact
         </Link>
-        <FaSun height="25" />
+        { theme==="dark" ? <FaSun height="25" onClick={toggleTheme} /> : <FaMoon height="25" onClick={toggleTheme} /> }
+        
       </Flex>
     </Flex>
   );
