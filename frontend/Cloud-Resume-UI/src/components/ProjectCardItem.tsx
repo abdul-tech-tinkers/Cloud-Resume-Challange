@@ -1,10 +1,11 @@
 import { FaGithub } from "react-icons/fa6";
 import { Project } from "../models/Project";
-import { Badge, Card, Flex, Heading, Text } from "@radix-ui/themes";
+import { Badge, Card, Flex, Text } from "@radix-ui/themes";
 import AppIconButton from "./AppIconButton";
 import { FaTools } from "react-icons/fa";
 import { CiSettings } from "react-icons/ci";
 import AppProjectDate from "./AppProjectDate";
+import AppProjectLinkItem from "./AppProjectLinkItem";
 
 interface props {
   project: Project;
@@ -16,7 +17,7 @@ const ProjectCardItem = ({ project }: props) => {
     <Card my="5">
       <Flex direction="column" gap="2">
         <Flex direction="row" align="center" justify="between">
-          <Heading>{project.Name}</Heading>
+          <AppProjectLinkItem project={project} />
           {project.GithubLink && (
             <AppIconButton onClick={() => console.log(project.Id)}>
               <FaGithub />
