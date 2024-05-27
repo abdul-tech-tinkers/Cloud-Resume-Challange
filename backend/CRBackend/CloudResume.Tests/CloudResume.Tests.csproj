@@ -22,4 +22,9 @@
         </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CloudResume.FunctionApp\CloudResume.FunctionApp.csproj" />
+      <ProjectReference Include="..\CRRepository\CRRepository.csproj" />
+    </ItemGroup>
+
 </Project>
