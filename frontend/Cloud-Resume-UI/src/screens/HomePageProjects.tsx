@@ -22,7 +22,7 @@ const HomePageProjects = ({ title, projects }: props) => {
       </Flex>
       <Flex gap="5" key={1234}>
         {projects?.map((project) => (
-          <ProjectCardItem key={project?.id} project={project} />
+          <ProjectCardItem key={project?.Id} project={project} />
         ))}
       </Flex>
     </Flex>

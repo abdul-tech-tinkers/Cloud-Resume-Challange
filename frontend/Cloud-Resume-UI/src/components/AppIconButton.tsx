@@ -1,5 +1,5 @@
 import { IconButton } from "@radix-ui/themes";
-import React, { ComponentProps, ReactNode } from "react";
+import { ComponentProps, ReactNode } from "react";
 
 interface props extends ComponentProps<"IconButton"> {
   children: ReactNode;
