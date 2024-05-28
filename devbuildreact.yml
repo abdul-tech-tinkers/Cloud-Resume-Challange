@@ -19,5 +19,5 @@ steps:
 
 - script: |
     npm --prefix ./frontend/Cloud-Resume-UI install
-    npm --prefix ./frontend/Cloud-Resume-UI run build
+    npm --prefix ./frontend/Cloud-Resume-UI run build 
   displayName: 'npm install and build'
