@@ -25,7 +25,7 @@ public class ProjectController
     }
 
     [Function("GetProjects")]
-    public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "Projects/GetProjects")] HttpRequestData req,
+    public async Task<HttpResponseData> GetProjects([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "Projects/GetProjects")] HttpRequestData req,
         FunctionContext executionContext)
     {
         try
@@ -50,7 +50,7 @@ public class ProjectController
         catch (Exception e)
         {
             Console.WriteLine(e);
-            throw;
+            return req.CreateResponse(HttpStatusCode.InternalServerError);
         }
     }
     
