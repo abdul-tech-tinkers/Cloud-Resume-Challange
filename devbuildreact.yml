@@ -16,6 +16,6 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install
-    npm run build
+    npm install -C frontend/Cloud-Resume-UI
+    npm run build - C frontend/Cloud-Resume-UI
   displayName: 'npm install and build'
