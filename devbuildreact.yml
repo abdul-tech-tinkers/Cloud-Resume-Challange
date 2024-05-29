@@ -22,25 +22,16 @@ steps:
     npm --prefix ./frontend/Cloud-Resume-UI run build 
   displayName: 'npm install and build'
   
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(System.DefaultWorkingDirectory)'
-    Contents: |
-          $(System.DefaultWorkingDirectory)/**/*
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/output-site'
-  displayName: 'Copy site files to artifact directory'
-
 - task: ArchiveFiles@2
-  displayName: "Archive Files"
   inputs:
     rootFolderOrFile: '$(Build.BinariesDirectory)'
     includeRootFolder: true
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
-
+    
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
