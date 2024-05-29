@@ -6,11 +6,16 @@
 trigger:
 - main
 
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
 pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
+- script: echo '$(buildConfiguration)'
   displayName: 'Run a one-line script'
 
 - task: NuGetToolInstaller@1
@@ -20,15 +25,17 @@ steps:
   displayName: "Use Nuget 6.10.0"
 
 - task: NuGetCommand@2
+  displayName: "restore nuget"
   inputs:
     command: 'restore'
     restoreSolution: '**/CRBackend/*.sln'
     feedsToUse: 'select'
 
 - task: DotNetCoreCLI@2
+  displayName: "build"
   inputs:
     command: 'build'
     projects: '**/*/*.sln'
-    arguments: '--configuration $(BuildConfiguration)'
+    arguments: '--configuration $(buildConfiguration)'
     verbosityRestore: Detailed
     verbosityPack: Detailed
