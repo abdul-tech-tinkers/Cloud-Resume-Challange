@@ -39,3 +39,10 @@ steps:
     arguments: '--configuration $(buildConfiguration)'
     verbosityRestore: Detailed
     verbosityPack: Detailed
+    buildProperties: 
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '**/*/*.sln'
+    arguments: '--configuration $(buildConfiguration)'
