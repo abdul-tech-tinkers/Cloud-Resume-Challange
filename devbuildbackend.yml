@@ -55,13 +55,13 @@ steps:
     publishWebProjects: false
     zipAfterPublish: true
     projects: '**/*/*.sln'
-    arguments: '--no-restore --configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)/$(Build.BuildId)-backend'
+    arguments: '--no-restore --configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)'
     
 
 - task: PublishBuildArtifacts@1
   displayName: "publish artifacts"
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-backend.zip'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
