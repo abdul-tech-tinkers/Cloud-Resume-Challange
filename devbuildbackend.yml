@@ -48,8 +48,16 @@ steps:
     projects: '**/*/*.sln'
     arguments: '--configuration $(buildConfiguration)'
 
+- task: CopyFiles@2
+  displayName: "Copy Terraform files to output"
+  name: "CopyTerraform"
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/devOps/Terraform'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)/Terraform'
+  
 - task: DotNetCoreCLI@2
-  displayName: "publish output"
+  displayName: "publish build output"
   inputs:
     command: 'publish'
     publishWebProjects: false
