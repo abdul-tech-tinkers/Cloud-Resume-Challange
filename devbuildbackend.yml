@@ -48,13 +48,22 @@ steps:
     projects: '**/*/*.sln'
     arguments: '--configuration $(buildConfiguration)'
 
-- task: CopyFiles@2
-  displayName: "Copy Terraform files to output"
-  name: "CopyTerraform"
+#- task: CopyFiles@2
+#  displayName: "Copy Terraform files to output"
+#  name: "CopyTerraform"
+#  inputs:
+#    SourceFolder: '$(Build.SourcesDirectory)/devops/Terraform'
+#    Contents: '**'
+#    TargetFolder: '$(build.artifactstagingdirectory)/Terraform'
+
+- task: ArchiveFiles@2
+  displayName: "publish terraform"
   inputs:
-    SourceFolder: '$(Build.SourcesDirectory)/devops/Terraform'
-    Contents: '**'
-    TargetFolder: '$(build.artifactstagingdirectory)/Terraform'
+    rootFolderOrFile: '$(Build.SourcesDirectory)/devops/Terraform'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(build.artifactstagingdirectory)/Terraform.zip'
+    replaceExistingArchive: true
   
 - task: DotNetCoreCLI@2
   displayName: "publish build output"
