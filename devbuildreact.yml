@@ -38,6 +38,6 @@ steps:
     
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-site.zip'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-site/CRBackend.zip'
     ArtifactName: 'drop'
     publishLocation: 'Container'
