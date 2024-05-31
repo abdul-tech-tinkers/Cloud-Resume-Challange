@@ -25,7 +25,10 @@ resource "azurerm_linux_function_app" "cloudresumechallenge_functionapp" {
       allowed_origins     = ["*"]
       support_credentials = false
     }
+    application_insights_key = azurerm_application_insights.cloudresumechallange_applicationinsight.instrumentation_key
   }
+
+
 
   app_settings = {
     "TableStorageConnectionString" : azurerm_storage_account.cloudresumechallenge_storageaccount.primary_connection_string
