@@ -33,7 +33,8 @@ public class VisitorController
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
+            Console.WriteLine(e.Message);
+            Console.WriteLine(e.StackTrace);
             return req.CreateResponse(HttpStatusCode.InternalServerError);
         }
     }
@@ -53,7 +54,8 @@ public class VisitorController
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
+            Console.WriteLine(e.Message);
+            Console.WriteLine(e.StackTrace);
             return req.CreateResponse(HttpStatusCode.InternalServerError);
         }
     }
