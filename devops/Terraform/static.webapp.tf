@@ -5,3 +5,5 @@ resource "azurerm_static_web_app" "cloudresumechallange_staicsite" {
   sku_tier            = "Free"
   sku_size            = "Free"
 }
+
+

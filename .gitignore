@@ -433,6 +433,8 @@ terraform.rc
 
 .terraform.lock.hcl
 
+.terraform/*
+
 # JetBrains Rider
 *.sln.iml
 
