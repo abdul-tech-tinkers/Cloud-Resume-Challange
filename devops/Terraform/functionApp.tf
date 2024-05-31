@@ -21,6 +21,10 @@ resource "azurerm_linux_function_app" "cloudresumechallenge_functionapp" {
       dotnet_version              = local.dotnetversion
       use_dotnet_isolated_runtime = true
     }
+    cors {
+      allowed_origins     = ["*"]
+      support_credentials = false
+    }
   }
 
   identity {
