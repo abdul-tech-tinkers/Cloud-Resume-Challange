@@ -28,7 +28,7 @@ resource "azurerm_linux_function_app" "cloudresumechallenge_functionapp" {
   }
 
   app_settings = {
-    "TableStorageConnectionString" : azurerm_storage_table.cloudresumechallenge_counter_table.primary_connection_string
+    "TableStorageConnectionString" : azurerm_storage_account.cloudresumechallenge_storageaccount.primary_connection_string
   }
 
   identity {
