@@ -1,0 +1,4 @@
+ - azure pipeline to read the terraform output
+ - upgraded the .net version 8 after facing some dll issues
+ - client configuration to call api?
+ - website - function app configuration to invoke the api

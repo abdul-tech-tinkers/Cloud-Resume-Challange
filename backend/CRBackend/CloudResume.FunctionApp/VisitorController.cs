@@ -24,7 +24,7 @@ public class VisitorController
     {
         try
         {
-            _logger.LogInformation("C# HTTP trigger function processed a request.");
+            _logger.LogInformation("C# HTTP trigger GetCounter function processed a request.");
 
             var visitor = await _visitorRepository.GetCounterEntity();
             var response = req.CreateResponse(HttpStatusCode.OK);
@@ -33,8 +33,8 @@ public class VisitorController
         }
         catch (Exception e)
         {
-            Console.WriteLine(e.Message);
-            Console.WriteLine(e.StackTrace);
+            _logger.LogError(e, e.Message);
+            _logger.LogError($"Message: {e.Message}, Stacktrace: {e.StackTrace}");
             return req.CreateResponse(HttpStatusCode.InternalServerError);
         }
     }
@@ -54,8 +54,8 @@ public class VisitorController
         }
         catch (Exception e)
         {
-            Console.WriteLine(e.Message);
-            Console.WriteLine(e.StackTrace);
+            _logger.LogError(e, e.Message);
+            _logger.LogError($"Message: {e.Message}, Stacktrace: {e.StackTrace}");
             return req.CreateResponse(HttpStatusCode.InternalServerError);
         }
     }

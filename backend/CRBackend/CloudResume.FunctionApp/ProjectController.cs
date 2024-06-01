@@ -49,7 +49,8 @@ public class ProjectController
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
+            _logger.LogError(e, e.Message);
+            _logger.LogError($"Message: {e.Message}, Stacktrace: {e.StackTrace}");
             return req.CreateResponse(HttpStatusCode.InternalServerError);
         }
     }
@@ -74,7 +75,8 @@ public class ProjectController
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
+            _logger.LogError(e, e.Message);
+            _logger.LogError($"Message: {e.Message}, Stacktrace: {e.StackTrace}");
             return req.CreateResponse(HttpStatusCode.InternalServerError);
         }
     }
