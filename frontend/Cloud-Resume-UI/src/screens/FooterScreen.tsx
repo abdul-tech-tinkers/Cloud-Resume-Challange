@@ -1,8 +1,9 @@
 import { Flex, Text, Strong } from "@radix-ui/themes";
-import { FaTwitter, FaLinkedin } from "react-icons/fa6";
+import { FaTwitter, FaLinkedin, FaGithub, FaMailchimp } from "react-icons/fa6";
 import AppIconButton from "../components/AppIconButton";
 import AppVisitCounter from "../components/AppVisitCounter";
 import AppLink from "../components/AppLink";
+import { BiMailSend } from "react-icons/bi";
 
 const FooterScreen = () => {
   return (
@@ -13,6 +14,28 @@ const FooterScreen = () => {
       </Flex>
 
       <Flex direction="row" gap="2" justify="center" align="center">
+        <AppLink href="https://github.com/abdul-tech-tinkers/">
+          <AppIconButton
+            color="gray"
+            onClick={() => {
+              console.log("twitter");
+            }}
+          >
+            <FaGithub />
+          </AppIconButton>
+        </AppLink>
+
+        <AppLink href="mailto:b.abduljameel@gmail.com">
+          <AppIconButton
+            color="gray"
+            onClick={() => {
+              console.log("twitter");
+            }}
+          >
+            <BiMailSend />
+          </AppIconButton>
+        </AppLink>
+
         {/* Add LinkedIn icon and link here */}
         <AppLink href="https://in.linkedin.com/in/abduljameel">
           <AppIconButton
@@ -35,8 +58,6 @@ const FooterScreen = () => {
             <FaTwitter />
           </AppIconButton>
         </AppLink>
-
-
       </Flex>
     </Flex>
   );
