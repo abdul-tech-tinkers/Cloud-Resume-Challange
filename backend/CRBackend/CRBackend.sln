@@ -1,12 +1,12 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRModel", "CRModel\CRModel.csproj", "{D319AEC1-5680-4FDE-9BA7-6E88AA1DADCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRModel", "CRModel\CRModel.csproj", "{D319AEC1-5680-4FDE-9BA7-6E88AA1DADCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudResume.FunctionApp", "CloudResume.FunctionApp\CloudResume.FunctionApp.csproj", "{FA5BE3F5-BDFD-4E52-A465-0D37210F32DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudResume.FunctionApp", "CloudResume.FunctionApp\CloudResume.FunctionApp.csproj", "{FA5BE3F5-BDFD-4E52-A465-0D37210F32DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRRepository", "CRRepository\CRRepository.csproj", "{8C80050F-50A6-4DEE-8D62-20467F1C251E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRRepository", "CRRepository\CRRepository.csproj", "{8C80050F-50A6-4DEE-8D62-20467F1C251E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudResume.Tests", "CloudResume.Tests\CloudResume.Tests.csproj", "{E1C10496-9F9F-480D-AB9D-C091371261EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudResume.Tests", "CloudResume.Tests\CloudResume.Tests.csproj", "{E1C10496-9F9F-480D-AB9D-C091371261EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
