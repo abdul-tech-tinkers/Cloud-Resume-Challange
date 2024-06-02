@@ -11,19 +11,17 @@ var queryClient = new QueryClient();
 function App() {
   const { theme } = useThemeStore();
 
-
   return (
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>
         <Theme appearance={theme} accentColor="ruby">
           <RouterProvider router={router} />
-          <VisitorCount />
+          {/* <VisitorCount /> */}
         </Theme>
       </QueryClientProvider>
     </React.StrictMode>
   );
 }
-
 
 const VisitorCount = () => {
   const { mutate } = useUpdateVisitorCount();
@@ -32,5 +30,5 @@ const VisitorCount = () => {
   }, []); // updates the visitor count on every render
 
   return null;
-}
+};
 export default App;
