@@ -23,11 +23,19 @@ steps:
   displayName: 'npm install and build'
 
 - task: CopyFiles@2
+  displayName: 'Copy dist Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
     SourceFolder: '$(System.DefaultWorkingDirectory)/frontend/Cloud-Resume-UI/dist'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)/output-site'
-
+    
+- task: CopyFiles@2
+  displayName: 'Copy staticwebapp.config.json to: $(Build.ArtifactStagingDirectory)'
+  inputs:
+    SourceFolder: '$(System.DefaultWorkingDirectory)/frontend/Cloud-Resume-UI'
+    Contents: 'staticwebapp.config.json'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/output-site'
+    
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/output-site'
