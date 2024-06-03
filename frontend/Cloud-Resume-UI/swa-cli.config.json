@@ -1,0 +1,12 @@
+{
+  "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
+  "configurations": {
+    "cloud-resume-ui": {
+      "appLocation": ".",
+      "outputLocation": "dist",
+      "appBuildCommand": "yarn run build",
+      "run": "yarn run dev",
+      "appDevserverUrl": "http://localhost:5173"
+    }
+  }
+}
