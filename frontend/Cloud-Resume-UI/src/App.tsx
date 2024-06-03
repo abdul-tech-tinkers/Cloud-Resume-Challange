@@ -16,7 +16,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <Theme appearance={theme} accentColor="ruby">
           <RouterProvider router={router} />
-          {/* <VisitorCount /> */}
+           <VisitorCount /> 
         </Theme>
       </QueryClientProvider>
     </React.StrictMode>
