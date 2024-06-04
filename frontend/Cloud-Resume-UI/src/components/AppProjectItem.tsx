@@ -13,12 +13,14 @@ const AppProjectItem = ({ project }: props) => {
   return (
     <Flex my="3">
       <Flex direction="column" gap="2">
-        <Flex align="center" gapY="2" justify="between">
+        <Flex align="center" gapY="2" gapX="5" justify="start">
           <AppProjectLinkItem project={project} />
           <Badge color="blue">
             {project.Type === 1 ? "Work Project" : "Personal Project"}
           </Badge>
-          <AppLink href={project.GithubLink}><GrGithub/></AppLink>
+          <AppLink href={project.GithubLink}>
+            <GrGithub />
+          </AppLink>
         </Flex>
         <AppProjectDate
           startDate={project.StartDate}
@@ -31,7 +33,6 @@ const AppProjectItem = ({ project }: props) => {
             <Badge key={tag}>{tag}</Badge>
           ))}
         </Flex>
-        
       </Flex>
     </Flex>
   );
