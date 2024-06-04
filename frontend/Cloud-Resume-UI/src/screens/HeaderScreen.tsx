@@ -14,7 +14,7 @@ const HeaderScreen = () => {
         </Heading>
       </Flex>
 
-      <Flex direction="row" gap="5" justify="center" align="center" p="5">
+      {/* <Flex direction="row" gap="5" justify="center" align="center" p="5">
         <Link style={{ textDecoration: "none" }} to="/">
           Home
         </Link>
@@ -29,7 +29,7 @@ const HeaderScreen = () => {
         </Link>
         { theme==="dark" ? <FaSun height="25" onClick={toggleTheme} /> : <FaMoon height="25" onClick={toggleTheme} /> }
         
-      </Flex>
+      </Flex> */}
     </Flex>
   );
 };

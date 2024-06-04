@@ -8,15 +8,15 @@ const DashboardScreen = () => {
   return (
     <Flex mt="5" direction="column">
       <ShortIntro />
-      <HomePageProjects
+      {/* <HomePageProjects
         title="Recent Project"
         projects={data?.filter((p) => p.Type == 1).slice(0, 3)}
-      />
+      /> */}
 
-      <HomePageProjects
+      {/* <HomePageProjects
         title="Cloud Project"
         projects={data?.filter((p) => p.Type == 0).slice(0, 3)}
-      />
+      /> */}
     </Flex>
   );
 };
