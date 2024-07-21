@@ -12,6 +12,9 @@ const ProjectsScreen = () => {
       </Heading>
       {data
         ?.filter((p) => p.Type == 1)
+        .sort((a, b) =>
+          b.EndDate.toString().localeCompare(a.EndDate.toString())
+        )
         .map((project) => (
           <AppProjectItem key={project.Id} project={project} />
         ))}
@@ -20,6 +23,9 @@ const ProjectsScreen = () => {
       </Heading>
       {data
         ?.filter((p) => p.Type == 0)
+        .sort((a, b) =>
+          b.EndDate.toString().localeCompare(a.EndDate.toString())
+        )
         .map((project) => (
           <AppProjectItem key={project.Id} project={project} />
         ))}
