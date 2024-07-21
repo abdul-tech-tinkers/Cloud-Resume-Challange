@@ -33,6 +33,7 @@ const AppProjectItem = ({ project }: props) => {
             <Badge key={tag}>{tag}</Badge>
           ))}
         </Flex>
+        <Separator orientation="horizontal" size="3" />
       </Flex>
     </Flex>
   );
