@@ -20,7 +20,7 @@ steps:
 
 - task: NuGetToolInstaller@1
   inputs:
-    versionSpec: '6.10.0'
+    versionSpec: '6.10.1'
     checkLatest: true
   displayName: "Use Nuget 6.10.0"
 
