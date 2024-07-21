@@ -18,9 +18,11 @@ const AppProjectItem = ({ project }: props) => {
             <Badge color="blue">
               {project.Type === 1 ? "Work Project" : "Personal Project"}
             </Badge>
-            <AppLink href={project.GithubLink}>
-              <GrGithub />
-            </AppLink>
+            {project.GithubLink && (
+                <AppLink href={project.GithubLink}>
+                  <GrGithub />
+                </AppLink>
+            )}
           </Flex>
           <AppProjectDate
               startDate={project.StartDate}
@@ -35,6 +37,7 @@ const AppProjectItem = ({ project }: props) => {
           </Flex>
           <Separator orientation="horizontal" size="3" />
         </Flex>
+        <Separator orientation="horizontal" size="3" />
       </Flex>
   );
 };
