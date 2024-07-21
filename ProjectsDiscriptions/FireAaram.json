@@ -1,0 +1,12 @@
+{
+    "Name": "Guidance Care Portal (GCP)",
+    "Description": "Humana is Unites States fortune 500 company that market and administrates Health Insurance. Guidance Care Portal (GCP) is a Windows based system. GCP acts as a customer care portal to provide Humana’s customers as tool to create and log their enquiries during phone call. GCP helps customer service representative by providing basic information of the member to whom enquiry is created. GCP acts as interface to various systems used by Humana. It pulls out data from these systems like claim management system, Benefit system etc. and display it in GCP. GCP holds the member information like demographic address, claims of last 3 months, dependent information, coverage details etc",
+    "Type": 1,
+    "StartDate": "2010-2-10T00:00:00Z",
+    "EndDate": "2011-11-28T00:00:00Z",
+    "Status": "Completed",
+    "TechStacks": ["C#", "WPF", "Silverlight", "LINQ", "WCF", "WF", "SQL Server","MVVM and Prism","SSRS", "SSIS"],
+    "Tools": ["Visual Studio 2008", "Enterprise Architect"],
+    "Frameworks": [".NET Framework 3.x"]
+  }
+  

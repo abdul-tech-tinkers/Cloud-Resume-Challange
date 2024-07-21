@@ -8,15 +8,18 @@ const ProjectsScreen = () => {
   return (
     <Flex mt="5" direction="column">
       <Heading mb="5" size="8">
-        My Projects
+        Work Projects
       </Heading>
       {data
         ?.filter((p) => p.Type == 1)
         .map((project) => (
           <AppProjectItem key={project.Id} project={project} />
         ))}
+      <Heading mb="5" size="8">
+        Cloud Projects
+      </Heading>
       {data
-        ?.filter((p) => p.Type == 2)
+        ?.filter((p) => p.Type == 0)
         .map((project) => (
           <AppProjectItem key={project.Id} project={project} />
         ))}

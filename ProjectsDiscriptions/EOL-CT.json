@@ -1,19 +1,11 @@
 {
-  "Name": "EOL-CT",
-  "Description": "Eurofins Online Configuration System. Automates the process of configuring the test for the customer including orders, additional fields, ordering services and sample services, allows printing labels to customers.",
+  "Name": "e.Designer for Photovoltaic (PV) System",
+  "Description": "Be.Desinger is a planning tool for solar energy systems. It allows installer to configure the location of installation, roofs, PV to be installed on roof, select efficient inverter, and configure wiring. The system computes the energy yield of the system, return of investment and revenue form system. The system generates an output document of the plan which can be used by installer as a reference hand copy during installation",
   "Type": 1,
-  "StartDate": "2014-12-03T00:00:00Z",
-  "EndDate": "2017-06-30T00:00:00Z",
+  "StartDate": "2012-2-10T00:00:00Z",
+  "EndDate": "2014-11-28T00:00:00Z",
   "Status": "Completed",
-  "TechStacks": [
-    "C#",
-    ".NET Framework 4.5",
-    "Wpf",
-    "SSIS",
-    "SQL Server",
-    "MSTest",
-    "SpecFlow"
-  ],
-  "Tools": ["Visual Studio 2012"],
-  "Frameworks": [".NET Framework 4.5"]
+  "TechStacks": ["C#", "WPF", "LINQ", "WCF"],
+  "Tools": ["Visual Studio 2010", "Enterprise Architect"],
+  "Frameworks": [".NET Framework 4"]
 }

@@ -1,0 +1,12 @@
+{
+    "Name": "Atellica Solution - Primary Display",
+    "Description": "The Atellica Solution by Siemens Healthineers is an advanced laboratory diagnostics system that integrates immunoassay and clinical chemistry analyzers with innovative sample-management technology. It is designed to enhance productivity, precision, and flexibility in clinical laboratories.Key Features: Integrated Analyzers: Combines immunoassay and clinical chemistry testing capabilities1. High Throughput: Capable of running up to 440 immunoassay tests per hour and up to 1800 clinical chemistry tests per hour. Flexible Configurations: Offers over 300 customizable configurations to fit various lab layouts and testing needs2. Advanced Sample Management: Features bidirectional magnetic sample-transport technology for efficient and secure sample handling2. Automation Ready: Supports automation functions to streamline pre- and post-analytical processes1.The Atellica Solution is designed to address common laboratory challenges, such as managing high testing volumes and ensuring rapid turnaround times, making it a valuable asset for mid- to high-volume labs.",
+    "Type": 1,
+    "StartDate": "2020-09-01T00:00:00Z",
+    "EndDate": "2024-07-01T00:00:00Z",
+    "Status": "In Progress",
+    "TechStacks": ["C#","MsTest", "UWP","MVVM"],
+    "Tools": ["Visual Studio 2022"],
+    "Frameworks": [".NET Framework 4.8","UWP", "Windows SDK"]
+  }
+  
