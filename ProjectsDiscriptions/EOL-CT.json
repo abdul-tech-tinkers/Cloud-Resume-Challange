@@ -1,0 +1,19 @@
+{
+  "Name": "EOL-CT",
+  "Description": "Eurofins Online Configuration System. Automates the process of configuring the test for the customer including orders, additional fields, ordering services and sample services, allows printing labels to customers.",
+  "Type": 1,
+  "StartDate": "2014-12-03T00:00:00Z",
+  "EndDate": "2017-06-30T00:00:00Z",
+  "Status": "Completed",
+  "TechStacks": [
+    "C#",
+    ".NET Framework 4.5",
+    "Wpf",
+    "SSIS",
+    "SQL Server",
+    "MSTest",
+    "SpecFlow"
+  ],
+  "Tools": ["Visual Studio 2012"],
+  "Frameworks": [".NET Framework 4.5"]
+}

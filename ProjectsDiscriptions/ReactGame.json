@@ -1,0 +1,21 @@
+{
+  "Id": "ae863298-e95a-44c4-b6a3-5640ebc37535",
+  "Name": "React game discovery app",
+  "Description": "React 18 learning course app from codewithmosh.com. hosted under https://ambitious-wave-0430f2910.2.azurestaticapps.net/",
+  "Type": 2,
+  "StartDate": "2023-01-01T00:00:00Z",
+  "EndDate": "2023-03-30T00:00:00Z",
+  "Status": "Completed",
+  "TechStacks": [
+    "React 18",
+    "React Query",
+    "Chakra UI Library",
+    "Formik, Yup",
+    "React Router",
+    "Zustand",
+    "React icons"
+  ],
+  "Tools": ["Visual Studio", "VS Code"],
+  "Frameworks": ["React18"],
+  "GithubLink": "https://github.com/abdul-tech-tinkers/react-game-discovery-app"
+}

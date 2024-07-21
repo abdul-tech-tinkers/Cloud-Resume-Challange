@@ -10,9 +10,16 @@ const ProjectsScreen = () => {
       <Heading mb="5" size="8">
         My Projects
       </Heading>
-      {data?.map((project) => (
-        <AppProjectItem project={project} />
-      ))}
+      {data
+        ?.filter((p) => p.Type == 1)
+        .map((project) => (
+          <AppProjectItem key={project.Id} project={project} />
+        ))}
+      {data
+        ?.filter((p) => p.Type == 2)
+        .map((project) => (
+          <AppProjectItem key={project.Id} project={project} />
+        ))}
     </Flex>
   );
 };

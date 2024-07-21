@@ -1,0 +1,38 @@
+
+{
+    "Id": "ae863298-e95a-44c4-b6a3-5640ebc37535",
+    "Name": "Cloud Resume Challenge using Azure",
+    "Description": "The Cloud Resume Challenge is a comprehensive exercise designed to kickstart your cloud journey.Although you can attempt the Cloud Resume Challenge using AWS, GCP, or Azure, I chose to implement it using Azure",
+    "Type": 2,
+    "StartDate": "2024-03-01T00:00:00Z",
+    "EndDate": "2024-06-31T00:00:00Z",
+    "Status": "Completed",
+    "TechStacks": [
+        "Azure Function Isolated Model",
+        "Azure Static Web App",
+        "C#",
+        "Azure Table Storage",
+        "Terraform",
+        "Azure Application insights",
+        "Azure DevOps",
+        "React 18",
+        "React Query",
+        "Redix UI Library",
+        "React Router",
+        "Zustand"
+
+    ],
+    "Tools": [
+        "Visual Studio",
+        "VS Code",
+        "Azure Portal",
+        "Iac using Terraform",
+        "Azure DevOps Build pipeline",
+        "xUnit"
+    ],
+    "Frameworks": [
+        ".NET 8.0",
+        "React 18"
+    ],
+    "GithubLink": "https://github.com/abdul-tech-tinkers/Cloud-Resume-Challange"
+}

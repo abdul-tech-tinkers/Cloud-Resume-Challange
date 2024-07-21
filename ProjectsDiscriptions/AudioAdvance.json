@@ -1,0 +1,35 @@
+
+    {
+        "Id": "ae863298-e95a-44c4-b6a3-5640ebc37535",
+        "Name": "Audio Duroos Website With Azure function and microservice architecture",
+        "Description": "To overcome the current limitations, improve performance, and reduce costs, we are planning to move the backend to a serverless microservices architecture. We are also planning to use Cosmos DB as the database for the website. Cosmos DB is a globally distributed, multi-model database service that enables you to elastically and independently scale throughput and storage across any number of Azure's geographic regions. As part of the new version 3.0, we are planning to move the backend services to Azure Functions.",
+        "Type": 2,
+        "StartDate": "2022-01-01T00:00:00Z",
+        "EndDate": "2023-12-31T00:00:00Z",
+        "Status": "Completed",
+        "TechStacks": [
+            "Azure Function Isolated Model",
+            "Azure KeyVault",
+            "C#",
+            "Azure Search",
+            "Azure Service Bus",
+            "Azure Cosmos DB",
+            "Azure Blob Storage",
+            "Azure API Management",
+            "Terraform",
+            "Serveless microservice architecture"
+
+        ],
+        "Tools": [
+            "Visual Studio",
+            "VS Code",
+            "Azure Portal",
+            "Terraform",
+            "Azure DevOps Build pipeline"
+        ],
+        "Frameworks": [
+            ".NET 8.0",
+            "React 18"
+        ],
+        "GithubLink": "https://medium.com/@b.abduljameel/cloud-resume-challenge-using-azure-6c476f0b533c"
+    }

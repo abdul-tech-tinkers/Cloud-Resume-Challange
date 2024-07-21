@@ -1,0 +1,29 @@
+{
+  "Id": "ae863298-e95a-44c4-b6a3-5640ebc37535",
+  "Name": "Laboratory Inventory Management for Reagents and Consumables",
+  "Description": "A catalog of qualified reagent and consumable products to be used in the laboratory. Tracking of inventory usage through ‘Check-in’ and ‘Check-out’ of product items. Provide insights into inventory usage through various reports and dashboards.Track Inventory needs with a cart using redis user access privileges for add/update/deregister product using userType G0, G1 etc.",
+  "Type": 2,
+  "StartDate": "2023-03-01T00:00:00Z",
+  "EndDate": "2023-06-30T00:00:00Z",
+  "Status": "Completed",
+  "TechStacks": [
+    "EF Core 6.0",
+    "RabbitMQ",
+    "Redis Cache",
+    "Ocelot API Gateway",
+    "Docker",
+    "SQL Server",
+    "C#",
+    "React 18",
+    "React Query",
+    "Chakra UI Library",
+    "Formik, Yup and React Form Validation",
+    "React Router",
+    "Zustand",
+    ".NET 6.0",
+    "React icons"
+  ],
+  "Tools": ["Visual Studio", "VS Code"],
+  "Frameworks": [".NET 6.0", "React 18", "docker"],
+  "GithubLink": "https://github.com/abdul-tech-tinkers/dotnet-microservices/tree/main/01_Assignment"
+}

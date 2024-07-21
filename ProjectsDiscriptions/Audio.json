@@ -1,0 +1,26 @@
+[
+    {
+        "Id": "ae863298-e95a-44c4-b6a3-5640ebc37535",
+        "Name": "Audio Duroos Website",
+        "Description": "Allows users to navigate and browse audio mp3 files. support search by various categories, navigation by speaker and venue. support downloads and share on social media platform",
+        "Type": 2,
+        "StartDate": "2016-01-01T00:00:00Z",
+        "EndDate": "2017-12-31T00:00:00Z",
+        "Status": "Completed",
+        "TechStacks": [
+            "ASP.NET MVC 4.8",
+            "HTML",
+            "CSS",
+            "Unify Html Template",
+            "angularjs"
+        ],
+        "Tools": [
+            "Visual Studio"
+        ],
+        "Frameworks": [
+            ".NET Framework 4.8",
+            "angularjs1.0"
+        ],
+        "GithubLink": "https://medium.com/@b.abduljameel/cloud-resume-challenge-using-azure-6c476f0b533c"
+    }
+]
